@@ -1,13 +1,13 @@
 clc; clear all; close all;
 
 %% Ground-truth function
-f = @(x) x + 0.5 * sin(17*x) + 0.2*randn(1);
+f = @(x) x + 0.5 * sin(17*x) + 0.05*randn(1);
 %f = @(x) 0.25 * x - (0.5 * (x > 0.75) * x')';
 x = [0 : 0.01 : 1];
 y = f(x);
 
 %% Kernel
-kernel = @(x1, x2) kes(x1, x2, 1, 0.1);
+kernel = @(x1, x2) kes(x1, x2, 1, 0.05);
 
 %% Acquisition function
 %af = @(x, m, v) rand(1);
